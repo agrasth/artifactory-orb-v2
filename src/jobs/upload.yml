@@ -49,6 +49,21 @@ parameters:
     default: true
     description: Include environment vars in build info
 
+  url:
+    type: string
+    default: ${ARTIFACTORY_URL}
+    description: Artifactory URL
+
+  user:
+    type: string
+    default: ${ARTIFACTORY_USER}
+    description: JFrog username
+
+  apikey:
+    type: string
+    default: ${ARTIFACTORY_API_KEY}
+    description: JFrog API key or access token
+
 docker:
   - image: <<parameters.docker-image>>
 
@@ -61,7 +76,11 @@ steps:
 
   - install
 
-  - configure
+  - configure:
+      url: <<parameters.url>>
+      user: <<parameters.user>>
+      apikey: <<parameters.apikey>>
+      server-id: <<parameters.server-id>>
 
   - upload:
       source: <<parameters.source>>
