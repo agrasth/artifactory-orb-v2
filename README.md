@@ -118,4 +118,4 @@ See [LICENSE](LICENSE) file.
 
 ## Related Projects
 
-- [jfrog-plugin-generator](../jfrog-plugin-generator/) - Generator for JFrog plugins across platforms
+- [jfrog-plugin-generator](https://github.com/agrasth/jfrog-plugin-generator) - Generator for JFrog plugins across platforms
